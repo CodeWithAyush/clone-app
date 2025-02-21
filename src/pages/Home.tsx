@@ -1,9 +1,6 @@
 import {
   HeroArea,
   CategoriesList,
-  DiscountOffers,
-  FeaturedPromo,
-  HighlightedPromo,
   ProductsRow,
 } from '../components/home';
 import Misc from '../lib/data/layout.json';
@@ -19,10 +16,7 @@ const Home = () => {
   return (
     <div className="_container">
       <HeroArea />
-      <FeaturedPromo />
       <CategoriesList />
-      <DiscountOffers />
-      <HighlightedPromo />
       {productItems.map((products, i) => (
         <ProductsRow key={i} {...products} />
       ))}

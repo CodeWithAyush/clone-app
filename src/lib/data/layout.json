@@ -3391,7 +3391,7 @@
                 "sts_visibility": false,
                 "mapping_id": 94761189,
                 "merchant_type": "Express",
-                "sbc_price": 0,
+                "sbc_price": 0, 
                 "unit": "300 g",
                 "pricing_comment": "",
                 "level1_category": [

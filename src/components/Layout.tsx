@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Header from './shared/Header';
 import Footer from './shared/Footer';
-import BrandPromotion from './BrandPromotion';
 import CartButtonBig from './cart/CartButtonBig';
 import Modal from './Modal';
 import { CartPanel } from './cart';
@@ -27,7 +26,6 @@ const Layout = ({ noFooter, component }: Props) => {
         <main className="pt-28 sm:pt-24">{component}</main>
         {!noFooter && (
           <>
-            <BrandPromotion />
             <Footer />
           </>
         )}

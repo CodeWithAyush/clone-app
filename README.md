@@ -1,15 +1,68 @@
-# BringIt (just like Blinkit)
+# React + TypeScript + Vite
 
-BringIt is a cloned version of BlinkIt (formerly Grofers) which is an online supermarket application to buy Fruits, Veggies, Snacks, Milk & more and get delivery safely & hygienically to your home.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![bringit-cover](https://user-images.githubusercontent.com/11155266/183999445-125f7cd8-57fc-46fd-a209-9aadde210888.png)
+Currently, two official plugins are available:
 
-### Features
-One can browse through various items, see their details, see similar products, add items to cart, view or edit them.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-[Check live demo](https://blinkit-clone.surge.sh)
+## Steps
 
-### Tools and Technologies
-The application is built with [React](https://reactjs.org/) and [Vite](https://vitejs.dev/) with sole purpose of practising the basics and implementation of [Redux-Toolkit](https://redux-toolkit.js.org/), while building something beautiful to showcase. 
+1. Clone or download zip file.
+2. In the folder directory run "npm i && npm run dev"
+3. See the result
 
-This has the homepage and the product details page recreated using [TailwindCSS](https://tailwindcss.com/). 
+## Remaining Functionalities
+
+1. User Authentication
+2. Search Functionality
+3. Address/Location Functionality
+
+## Next step
+
+1. Completing the remaining functionalities.
+2. Optimizing the application for performance and scalability.
+
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

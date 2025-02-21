@@ -3,7 +3,6 @@ import { IoCaretForwardSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { getProductForCart } from '../../utils/helper';
 import { ProductItemDetailed } from '../../utils/types';
-import { allFeatures } from '../BrandPromotion';
 import { AddToCartButton } from '../shared';
 import Breadcrumb from './Breadcrumb';
 import ProductGallery from './ProductGallery';
@@ -58,22 +57,7 @@ const ProductDetails = (props: any) => {
               </h4>
               <ProductInfoList {...currentProduct.attribute_collection} />
             </div>
-            <div className="pb-4 hidden lg:block">
-              <h4 className="font-bold _text-default text-[15px] py-3">
-                Why shop from bringit?
-              </h4>
-              {allFeatures.map((feat, i) => (
-                <div key={i} className="flex items-center gap-3 py-1">
-                  <div>
-                    <img className="w-12 h-12" src={feat.imgSrc} alt="" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h5 className="text-black text-[13px]">{feat.text}</h5>
-                    <p className="text-xs _text-muted">{feat.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            
           </div>
         </div>
       </div>

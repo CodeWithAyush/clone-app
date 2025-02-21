@@ -6,7 +6,6 @@ import { hideCart } from '../../store/ui';
 import { CartItem, ProductItem } from '../../utils/types';
 import AddToCartButton from '../shared/AddToCartButton';
 import Misc from '../../lib/data/layout.json';
-import SuggestedItems from './SuggestedItems';
 import { shuffleItems } from '../../utils/helper';
 
 const CartPanelItem = (props: CartItem) => {
@@ -62,7 +61,6 @@ const CartPanel = () => {
   const otherProducts = allProducts.filter(
     (item) => !addedProducts.includes(item.product_id.toString())
   );
-  const topProducts = shuffleItems(otherProducts).slice(0, 10);
 
   return (
     <div className="fixed inset-0 h-screen w-screen z-50 overflow-hidden p-4">
@@ -118,14 +116,7 @@ const CartPanel = () => {
                     ))}
                   </div>
                 </div>
-                <div className="bg-white">
-                  <div className="font-bold text-xl text-black pt-5 px-4">
-                    Before you checkout
-                  </div>
-                  <div className="relative px-3 my-2">
-                    <SuggestedItems topItems={topProducts} />
-                  </div>
-                </div>
+                
                 <div className="bg-white">
                   <div className="font-bold text-xl text-black pt-5 px-4">
                     Bill Details

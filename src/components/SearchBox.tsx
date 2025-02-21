@@ -1,6 +1,9 @@
 import { FiSearch } from 'react-icons/fi';
 
 const SearchBox = () => {
+  const handleSearch=(e:any)=>{
+
+  }
   return (
     <div className="_searchbox">
       <FiSearch
@@ -11,6 +14,7 @@ const SearchBox = () => {
         type="text"
         placeholder="Search for products"
         className="outline-none w-full text-[14px]"
+        onChange={(e)=>handleSearch(e)}
       />
     </div>
   );
